@@ -15,3 +15,9 @@ helm create todo
 helm install todo
 helm uninstall todo
 ```
+
+## Helm Templating
+
+```bash
+helm template todo > todo/rendered.yaml
+```
