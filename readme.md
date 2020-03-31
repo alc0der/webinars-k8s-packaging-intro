@@ -21,3 +21,14 @@ helm uninstall todo
 ```bash
 helm template todo > todo/rendered.yaml
 ```
+
+# Kustomize
+
+## Adding a Working Base
+
+Unlike Helm the base template for Kustomize is just a normal valid YAML that can simply be deployed with `kubectl apply`.
+
+```bash
+docker tag todo:1.0.0 todo:latest
+kubectl apply -f k8s/base
+```
