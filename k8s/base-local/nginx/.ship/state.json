@@ -1,0 +1,48 @@
+{
+  "v1": {
+    "config": null,
+    "releaseName": "nginx-ingress",
+    "upstream": "https://github.com/helm/charts/tree/master/stable/nginx-ingress",
+    "metadata": {
+      "applicationType": "helm",
+      "sequence": 0,
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png",
+      "name": "nginx-ingress",
+      "releaseNotes": "fix: pdb selector by component (#21654)\n\nSigned-off-by: Sergio Millan Rodriguez \u003csergio.rodriguez@ticketmaster.co.uk\u003e",
+      "version": "1.34.3",
+      "license": {
+        "id": "",
+        "assignee": "",
+        "createdAt": "0001-01-01T00:00:00Z",
+        "expiresAt": "0001-01-01T00:00:00Z",
+        "type": ""
+      }
+    },
+    "shipVersion": {
+      "version": "0.52.0",
+      "buildTime": "2019-10-19T07:27:00Z",
+      "dependencies": {
+        "helm": "v2.14.1",
+        "kustomize": "v2.0.3",
+        "terraform": "v0.11.14"
+      },
+      "go": {
+        "version": "go1.13.3",
+        "compiler": "gc",
+        "os": "darwin",
+        "arch": "amd64"
+      }
+    },
+    "contentSHA": "3c82b7aa03f4116b14b65aced1f343c9854fbd567d54f686b21b6619b8637dae",
+    "lifecycle": {
+      "stepsCompleted": {
+        "intro": true,
+        "kustomize": true,
+        "kustomize-intro": true,
+        "outro": true,
+        "render": true,
+        "values": true
+      }
+    }
+  }
+}

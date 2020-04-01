@@ -1,0 +1,10 @@
+kind: ""
+apiversion: ""
+resources:
+- clusterrole.yaml
+- clusterrolebinding.yaml
+- controller-deployment.yaml
+- controller-role.yaml
+- controller-rolebinding.yaml
+- controller-service.yaml
+- controller-serviceaccount.yaml

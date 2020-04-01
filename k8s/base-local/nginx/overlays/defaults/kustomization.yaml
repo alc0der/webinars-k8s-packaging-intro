@@ -1,0 +1,85 @@
+kind: ""
+apiversion: ""
+patchesJson6902:
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: nginx-ingress
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: nginx-ingress
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: nginx-ingress
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: nginx-ingress
+  path: heritage-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: nginx-ingress-controller
+  path: chart-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: nginx-ingress-controller
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    name: nginx-ingress
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    name: nginx-ingress
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: nginx-ingress
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: nginx-ingress
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    name: nginx-ingress-controller
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    name: nginx-ingress-controller
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    name: nginx-ingress
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    name: nginx-ingress
+  path: heritage-patch.json
+bases:
+- ../../base
