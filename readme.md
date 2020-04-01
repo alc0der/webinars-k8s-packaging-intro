@@ -32,3 +32,14 @@ Unlike Helm the base template for Kustomize is just a normal valid YAML that can
 docker tag todo:1.0.0 todo:latest
 kubectl apply -f k8s/base
 ```
+
+## Adding Kustomization Base
+
+One Kustomization file is needed in base
+
+```bash
+cd k8s/base
+kustomize edit add resource deployment.yaml 
+kustomize edit add resource service.yaml
+kubectl apply -k k8s/base
+```
