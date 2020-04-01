@@ -62,3 +62,25 @@ kubectl apply k8s/overlays/dev/rendered.yaml
 # or
 kustomize build k8s/overlays/dev | kubectl apply -f -
 ```
+
+# Ship
+
+```bash
+mkdir k8s/base-local/nginx
+cd k8s/base-local/nginx
+ship init https://github.com/helm/charts/tree/master/stable/nginx-ingress
+# make sure to disable default gateway
+touch kustomization.yaml
+kustomize edit add resource ./nginx/rendered.yaml
+cd ../overlays/dev
+touch ingress.yaml
+kustomize edit add resource ingress.yaml
+# switch service to clusterIP
+kustomize build k8s/overlays/dev > k8s/overlays/dev/rendered.yaml
+kubectl apply k8s/overlays/dev/rendered.yaml 
+```
+
+# WATCH
+
+watch 'echo "============ namespace: default ============"; kubectl get svc,deployment,po,ingress; echo "============ namespace: dev ============"; kubectl -n dev get svc,deployment,po,ingress'
+
