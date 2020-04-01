@@ -43,3 +43,22 @@ kustomize edit add resource deployment.yaml
 kustomize edit add resource service.yaml
 kubectl apply -k k8s/base
 ```
+## Adding Kustomization Overlay
+
+One kustomization file is needed in each overlay
+
+```base
+kustomize edit add resource ../../base
+kustomize edit set namespace dev
+kustomize edit set image todo=todo:latest
+kustomize edit set replicas todo=2
+kustomize edit add patch patch-deployment.yaml
+```
+
+Running kustomize
+```bash
+kustomize build k8s/overlays/dev > k8s/overlays/dev/rendered.yaml
+kubectl apply k8s/overlays/dev/rendered.yaml 
+# or
+kustomize build k8s/overlays/dev | kubectl apply -f -
+```

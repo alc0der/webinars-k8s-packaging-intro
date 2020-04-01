@@ -1,0 +1,12 @@
+# Because I am running docker k8s and I am building locally
+# Then images should be available. no need to pull
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo
+spec:
+  template:
+    spec:
+      containers:
+        - name: todo
+          imagePullPolicy: Never
